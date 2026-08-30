@@ -1,0 +1,221 @@
+
+======================================================================
+patch_scratch  (entrada=patch, arquitetura=scratch, 128px)
+======================================================================
+  treino 2461 imagens / 1060 pacientes
+  valid. 462 imagens / 188 pacientes
+  pesos de classe: {0: 0.853, 1: 1.208}
+  parâmetros treináveis: 422,785
+Epoch 1/40
+77/77 - 59s - 764ms/step - accuracy: 0.5794 - auc: 0.6132 - loss: 0.7007 - recall: 0.6094 - val_accuracy: 0.6082 - val_auc: 0.5973 - val_loss: 0.6883 - val_recall: 0.0000e+00 - learning_rate: 1.0000e-04
+Epoch 2/40
+77/77 - 57s - 741ms/step - accuracy: 0.5827 - auc: 0.6395 - loss: 0.6674 - recall: 0.6369 - val_accuracy: 0.6082 - val_auc: 0.6475 - val_loss: 0.6648 - val_recall: 0.0000e+00 - learning_rate: 1.0000e-04
+Epoch 3/40
+77/77 - 60s - 779ms/step - accuracy: 0.6022 - auc: 0.6456 - loss: 0.6686 - recall: 0.6192 - val_accuracy: 0.6082 - val_auc: 0.6486 - val_loss: 0.6668 - val_recall: 0.0000e+00 - learning_rate: 1.0000e-04
+Epoch 4/40
+77/77 - 60s - 783ms/step - accuracy: 0.6002 - auc: 0.6556 - loss: 0.6569 - recall: 0.6663 - val_accuracy: 0.6082 - val_auc: 0.6516 - val_loss: 0.7238 - val_recall: 0.0000e+00 - learning_rate: 1.0000e-04
+Epoch 5/40
+77/77 - 56s - 722ms/step - accuracy: 0.6091 - auc: 0.6661 - loss: 0.6479 - recall: 0.6889 - val_accuracy: 0.6082 - val_auc: 0.6569 - val_loss: 0.7128 - val_recall: 0.0000e+00 - learning_rate: 1.0000e-04
+Epoch 6/40
+77/77 - 54s - 707ms/step - accuracy: 0.6351 - auc: 0.6852 - loss: 0.6374 - recall: 0.6526 - val_accuracy: 0.6342 - val_auc: 0.6575 - val_loss: 0.7263 - val_recall: 0.2044 - learning_rate: 5.0000e-05
+Epoch 7/40
+77/77 - 59s - 761ms/step - accuracy: 0.6380 - auc: 0.7000 - loss: 0.6285 - recall: 0.7076 - val_accuracy: 0.5974 - val_auc: 0.6646 - val_loss: 0.7185 - val_recall: 0.6243 - learning_rate: 5.0000e-05
+Epoch 8/40
+77/77 - 67s - 867ms/step - accuracy: 0.6327 - auc: 0.6858 - loss: 0.6356 - recall: 0.6860 - val_accuracy: 0.5996 - val_auc: 0.6687 - val_loss: 0.7503 - val_recall: 0.6851 - learning_rate: 5.0000e-05
+Epoch 9/40
+77/77 - 53s - 690ms/step - accuracy: 0.6384 - auc: 0.6948 - loss: 0.6277 - recall: 0.7007 - val_accuracy: 0.6169 - val_auc: 0.6902 - val_loss: 0.6671 - val_recall: 0.5856 - learning_rate: 2.5000e-05
+Epoch 10/40
+77/77 - 53s - 693ms/step - accuracy: 0.6355 - auc: 0.6972 - loss: 0.6271 - recall: 0.7203 - val_accuracy: 0.6342 - val_auc: 0.6989 - val_loss: 0.6323 - val_recall: 0.5746 - learning_rate: 2.5000e-05
+Epoch 11/40
+77/77 - 51s - 658ms/step - accuracy: 0.6355 - auc: 0.7050 - loss: 0.6220 - recall: 0.7095 - val_accuracy: 0.6472 - val_auc: 0.7029 - val_loss: 0.6181 - val_recall: 0.5193 - learning_rate: 2.5000e-05
+Epoch 12/40
+77/77 - 51s - 662ms/step - accuracy: 0.6380 - auc: 0.7036 - loss: 0.6228 - recall: 0.6977 - val_accuracy: 0.6580 - val_auc: 0.7146 - val_loss: 0.5912 - val_recall: 0.5304 - learning_rate: 2.5000e-05
+Epoch 13/40
+77/77 - 49s - 640ms/step - accuracy: 0.6294 - auc: 0.6971 - loss: 0.6261 - recall: 0.7331 - val_accuracy: 0.6537 - val_auc: 0.7135 - val_loss: 0.5892 - val_recall: 0.4475 - learning_rate: 2.5000e-05
+Epoch 14/40
+77/77 - 48s - 625ms/step - accuracy: 0.6315 - auc: 0.6965 - loss: 0.6215 - recall: 0.7076 - val_accuracy: 0.6602 - val_auc: 0.7071 - val_loss: 0.6262 - val_recall: 0.2376 - learning_rate: 2.5000e-05
+Epoch 15/40
+77/77 - 51s - 661ms/step - accuracy: 0.6510 - auc: 0.7170 - loss: 0.6111 - recall: 0.7527 - val_accuracy: 0.6299 - val_auc: 0.6866 - val_loss: 0.7061 - val_recall: 0.0884 - learning_rate: 2.5000e-05
+Epoch 16/40
+77/77 - 49s - 640ms/step - accuracy: 0.6302 - auc: 0.7094 - loss: 0.6152 - recall: 0.7105 - val_accuracy: 0.6688 - val_auc: 0.7040 - val_loss: 0.6069 - val_recall: 0.3481 - learning_rate: 2.5000e-05
+Epoch 17/40
+77/77 - 49s - 632ms/step - accuracy: 0.6445 - auc: 0.7059 - loss: 0.6163 - recall: 0.7282 - val_accuracy: 0.6753 - val_auc: 0.7025 - val_loss: 0.6151 - val_recall: 0.3481 - learning_rate: 1.2500e-05
+Epoch 18/40
+77/77 - 49s - 632ms/step - accuracy: 0.6412 - auc: 0.7093 - loss: 0.6151 - recall: 0.7390 - val_accuracy: 0.6688 - val_auc: 0.7025 - val_loss: 0.6139 - val_recall: 0.3039 - learning_rate: 1.2500e-05
+Epoch 19/40
+77/77 - 61s - 788ms/step - accuracy: 0.6424 - auc: 0.7179 - loss: 0.6116 - recall: 0.7223 - val_accuracy: 0.6623 - val_auc: 0.7072 - val_loss: 0.5993 - val_recall: 0.4420 - learning_rate: 1.2500e-05
+Epoch 20/40
+77/77 - 51s - 669ms/step - accuracy: 0.6489 - auc: 0.7201 - loss: 0.6060 - recall: 0.7282 - val_accuracy: 0.6688 - val_auc: 0.7028 - val_loss: 0.6188 - val_recall: 0.2873 - learning_rate: 6.2500e-06
+  concluído em 18.1 min — melhor val_auc: 0.7146
+  modelo salvo em C:\Users\pedro\Downloads\tech-challenge-fase1\feature-fase-1\models\cnn_patch_scratch.keras
+
+======================================================================
+patch_transfer  (entrada=patch, arquitetura=transfer, 160px)
+======================================================================
+  treino 2461 imagens / 1060 pacientes
+  valid. 462 imagens / 188 pacientes
+  pesos de classe: {0: 0.853, 1: 1.208}
+  [estágio 1] backbone congelado — 2,259,265 params (1,281 treináveis)
+Epoch 1/12
+77/77 - 40s - 517ms/step - accuracy: 0.5823 - auc: 0.6257 - loss: 0.7248 - recall: 0.5967 - val_accuracy: 0.6558 - val_auc: 0.7366 - val_loss: 0.6066 - val_recall: 0.7569 - learning_rate: 0.0010
+Epoch 2/12
+77/77 - 32s - 410ms/step - accuracy: 0.6587 - auc: 0.7293 - loss: 0.6130 - recall: 0.6938 - val_accuracy: 0.7035 - val_auc: 0.7628 - val_loss: 0.5582 - val_recall: 0.4254 - learning_rate: 0.0010
+Epoch 3/12
+77/77 - 34s - 448ms/step - accuracy: 0.6603 - auc: 0.7360 - loss: 0.6054 - recall: 0.6909 - val_accuracy: 0.7056 - val_auc: 0.7765 - val_loss: 0.5394 - val_recall: 0.5193 - learning_rate: 0.0010
+Epoch 4/12
+77/77 - 31s - 399ms/step - accuracy: 0.6725 - auc: 0.7559 - loss: 0.5847 - recall: 0.7085 - val_accuracy: 0.6948 - val_auc: 0.7784 - val_loss: 0.5376 - val_recall: 0.4309 - learning_rate: 0.0010
+Epoch 5/12
+77/77 - 31s - 409ms/step - accuracy: 0.6814 - auc: 0.7618 - loss: 0.5819 - recall: 0.6968 - val_accuracy: 0.7165 - val_auc: 0.7874 - val_loss: 0.5501 - val_recall: 0.3370 - learning_rate: 0.0010
+Epoch 6/12
+77/77 - 29s - 381ms/step - accuracy: 0.6867 - auc: 0.7630 - loss: 0.5759 - recall: 0.7134 - val_accuracy: 0.7229 - val_auc: 0.7910 - val_loss: 0.5407 - val_recall: 0.3867 - learning_rate: 0.0010
+Epoch 7/12
+77/77 - 29s - 380ms/step - accuracy: 0.6741 - auc: 0.7634 - loss: 0.5738 - recall: 0.6860 - val_accuracy: 0.7121 - val_auc: 0.7910 - val_loss: 0.5269 - val_recall: 0.5691 - learning_rate: 0.0010
+Epoch 8/12
+77/77 - 29s - 372ms/step - accuracy: 0.6957 - auc: 0.7688 - loss: 0.5688 - recall: 0.7193 - val_accuracy: 0.7056 - val_auc: 0.7938 - val_loss: 0.5270 - val_recall: 0.4144 - learning_rate: 0.0010
+Epoch 9/12
+77/77 - 28s - 368ms/step - accuracy: 0.7078 - auc: 0.7817 - loss: 0.5593 - recall: 0.7154 - val_accuracy: 0.7056 - val_auc: 0.7893 - val_loss: 0.5268 - val_recall: 0.5359 - learning_rate: 0.0010
+Epoch 10/12
+77/77 - 28s - 367ms/step - accuracy: 0.7119 - auc: 0.7881 - loss: 0.5538 - recall: 0.7547 - val_accuracy: 0.7186 - val_auc: 0.7905 - val_loss: 0.5349 - val_recall: 0.4033 - learning_rate: 0.0010
+Epoch 11/12
+77/77 - 30s - 385ms/step - accuracy: 0.7030 - auc: 0.7810 - loss: 0.5578 - recall: 0.7242 - val_accuracy: 0.7035 - val_auc: 0.7952 - val_loss: 0.5270 - val_recall: 0.4586 - learning_rate: 0.0010
+Epoch 12/12
+77/77 - 29s - 372ms/step - accuracy: 0.7009 - auc: 0.7834 - loss: 0.5523 - recall: 0.7193 - val_accuracy: 0.7338 - val_auc: 0.7960 - val_loss: 0.5315 - val_recall: 0.4088 - learning_rate: 0.0010
+  [estágio 2] fine-tune do último bloco — 1,349,761 params treináveis
+Epoch 1/8
+77/77 - 41s - 529ms/step - accuracy: 0.7038 - auc: 0.7828 - loss: 0.5519 - recall: 0.7301 - val_accuracy: 0.6991 - val_auc: 0.7942 - val_loss: 0.5275 - val_recall: 0.4088 - learning_rate: 1.0000e-05
+Epoch 2/8
+77/77 - 32s - 417ms/step - accuracy: 0.6957 - auc: 0.7836 - loss: 0.5491 - recall: 0.7341 - val_accuracy: 0.7165 - val_auc: 0.8037 - val_loss: 0.5223 - val_recall: 0.5138 - learning_rate: 1.0000e-05
+Epoch 3/8
+77/77 - 38s - 492ms/step - accuracy: 0.7208 - auc: 0.8055 - loss: 0.5313 - recall: 0.7498 - val_accuracy: 0.7035 - val_auc: 0.7894 - val_loss: 0.5424 - val_recall: 0.3481 - learning_rate: 1.0000e-05
+Epoch 4/8
+77/77 - 34s - 446ms/step - accuracy: 0.7184 - auc: 0.8077 - loss: 0.5243 - recall: 0.7488 - val_accuracy: 0.7100 - val_auc: 0.7970 - val_loss: 0.5376 - val_recall: 0.3591 - learning_rate: 1.0000e-05
+Epoch 5/8
+77/77 - 37s - 474ms/step - accuracy: 0.7322 - auc: 0.8178 - loss: 0.5153 - recall: 0.7556 - val_accuracy: 0.7208 - val_auc: 0.7982 - val_loss: 0.5195 - val_recall: 0.5525 - learning_rate: 1.0000e-05
+Epoch 6/8
+77/77 - 35s - 452ms/step - accuracy: 0.7192 - auc: 0.8077 - loss: 0.5278 - recall: 0.7262 - val_accuracy: 0.6991 - val_auc: 0.7903 - val_loss: 0.5358 - val_recall: 0.6519 - learning_rate: 1.0000e-05
+  concluído em 9.8 min — melhor val_auc: 0.8037
+  modelo salvo em C:\Users\pedro\Downloads\tech-challenge-fase1\feature-fase-1\models\cnn_patch_transfer.keras
+
+======================================================================
+full_scratch  (entrada=full, arquitetura=scratch, 128px)
+======================================================================
+  treino 2103 imagens / 1060 pacientes
+  valid. 386 imagens / 188 pacientes
+  pesos de classe: {0: 0.91, 1: 1.11}
+  parâmetros treináveis: 422,785
+Epoch 1/40
+66/66 - 48s - 727ms/step - accuracy: 0.5535 - auc: 0.5631 - loss: 0.7122 - recall: 0.5100 - val_accuracy: 0.4534 - val_auc: 0.4029 - val_loss: 0.6966 - val_recall: 1.0000 - learning_rate: 1.0000e-04
+Epoch 2/40
+66/66 - 44s - 670ms/step - accuracy: 0.5739 - auc: 0.5949 - loss: 0.6876 - recall: 0.5565 - val_accuracy: 0.4534 - val_auc: 0.4199 - val_loss: 0.7639 - val_recall: 1.0000 - learning_rate: 1.0000e-04
+Epoch 3/40
+66/66 - 41s - 627ms/step - accuracy: 0.5801 - auc: 0.6204 - loss: 0.6723 - recall: 0.5861 - val_accuracy: 0.4534 - val_auc: 0.4082 - val_loss: 0.9533 - val_recall: 1.0000 - learning_rate: 1.0000e-04
+Epoch 4/40
+66/66 - 47s - 711ms/step - accuracy: 0.5854 - auc: 0.6258 - loss: 0.6717 - recall: 0.5924 - val_accuracy: 0.4534 - val_auc: 0.4046 - val_loss: 1.0384 - val_recall: 1.0000 - learning_rate: 1.0000e-04
+Epoch 5/40
+66/66 - 39s - 585ms/step - accuracy: 0.6120 - auc: 0.6504 - loss: 0.6585 - recall: 0.6040 - val_accuracy: 0.4534 - val_auc: 0.4064 - val_loss: 1.1495 - val_recall: 1.0000 - learning_rate: 5.0000e-05
+Epoch 6/40
+66/66 - 39s - 585ms/step - accuracy: 0.6191 - auc: 0.6649 - loss: 0.6495 - recall: 0.6146 - val_accuracy: 0.4534 - val_auc: 0.4038 - val_loss: 1.2452 - val_recall: 1.0000 - learning_rate: 5.0000e-05
+Epoch 7/40
+66/66 - 38s - 575ms/step - accuracy: 0.6229 - auc: 0.6672 - loss: 0.6483 - recall: 0.6737 - val_accuracy: 0.4534 - val_auc: 0.4381 - val_loss: 1.1678 - val_recall: 1.0000 - learning_rate: 5.0000e-05
+Epoch 8/40
+66/66 - 38s - 580ms/step - accuracy: 0.6144 - auc: 0.6615 - loss: 0.6510 - recall: 0.6410 - val_accuracy: 0.4534 - val_auc: 0.4827 - val_loss: 1.0766 - val_recall: 1.0000 - learning_rate: 2.5000e-05
+Epoch 9/40
+66/66 - 40s - 608ms/step - accuracy: 0.6163 - auc: 0.6684 - loss: 0.6458 - recall: 0.6389 - val_accuracy: 0.4534 - val_auc: 0.5319 - val_loss: 0.9654 - val_recall: 1.0000 - learning_rate: 2.5000e-05
+Epoch 10/40
+66/66 - 37s - 563ms/step - accuracy: 0.6210 - auc: 0.6701 - loss: 0.6459 - recall: 0.6389 - val_accuracy: 0.4482 - val_auc: 0.6306 - val_loss: 0.8174 - val_recall: 0.9829 - learning_rate: 2.5000e-05
+Epoch 11/40
+66/66 - 38s - 573ms/step - accuracy: 0.6239 - auc: 0.6845 - loss: 0.6365 - recall: 0.6748 - val_accuracy: 0.5000 - val_auc: 0.6766 - val_loss: 0.7285 - val_recall: 0.9657 - learning_rate: 1.2500e-05
+Epoch 12/40
+66/66 - 43s - 649ms/step - accuracy: 0.6258 - auc: 0.6822 - loss: 0.6395 - recall: 0.6727 - val_accuracy: 0.5622 - val_auc: 0.6876 - val_loss: 0.6908 - val_recall: 0.9143 - learning_rate: 1.2500e-05
+Epoch 13/40
+66/66 - 40s - 609ms/step - accuracy: 0.6410 - auc: 0.6916 - loss: 0.6341 - recall: 0.6705 - val_accuracy: 0.6632 - val_auc: 0.6968 - val_loss: 0.6417 - val_recall: 0.7886 - learning_rate: 1.2500e-05
+Epoch 14/40
+66/66 - 41s - 618ms/step - accuracy: 0.6301 - auc: 0.6932 - loss: 0.6318 - recall: 0.6769 - val_accuracy: 0.6010 - val_auc: 0.6869 - val_loss: 0.6691 - val_recall: 0.8514 - learning_rate: 1.2500e-05
+Epoch 15/40
+66/66 - 48s - 731ms/step - accuracy: 0.6381 - auc: 0.6896 - loss: 0.6349 - recall: 0.6631 - val_accuracy: 0.6399 - val_auc: 0.7007 - val_loss: 0.6474 - val_recall: 0.7886 - learning_rate: 1.2500e-05
+Epoch 16/40
+66/66 - 36s - 548ms/step - accuracy: 0.6272 - auc: 0.6831 - loss: 0.6374 - recall: 0.6705 - val_accuracy: 0.6580 - val_auc: 0.7027 - val_loss: 0.6347 - val_recall: 0.7600 - learning_rate: 1.2500e-05
+Epoch 17/40
+66/66 - 51s - 775ms/step - accuracy: 0.6339 - auc: 0.6900 - loss: 0.6341 - recall: 0.6653 - val_accuracy: 0.6606 - val_auc: 0.7035 - val_loss: 0.6335 - val_recall: 0.7543 - learning_rate: 1.2500e-05
+Epoch 18/40
+66/66 - 42s - 644ms/step - accuracy: 0.6301 - auc: 0.6865 - loss: 0.6332 - recall: 0.6800 - val_accuracy: 0.6477 - val_auc: 0.7084 - val_loss: 0.6337 - val_recall: 0.7314 - learning_rate: 1.2500e-05
+Epoch 19/40
+66/66 - 36s - 539ms/step - accuracy: 0.6305 - auc: 0.6906 - loss: 0.6327 - recall: 0.6515 - val_accuracy: 0.6425 - val_auc: 0.7049 - val_loss: 0.6431 - val_recall: 0.7829 - learning_rate: 1.2500e-05
+Epoch 20/40
+66/66 - 36s - 545ms/step - accuracy: 0.6453 - auc: 0.7015 - loss: 0.6276 - recall: 0.6927 - val_accuracy: 0.6477 - val_auc: 0.7065 - val_loss: 0.6402 - val_recall: 0.7771 - learning_rate: 1.2500e-05
+Epoch 21/40
+66/66 - 41s - 618ms/step - accuracy: 0.6310 - auc: 0.6863 - loss: 0.6356 - recall: 0.6938 - val_accuracy: 0.6373 - val_auc: 0.7040 - val_loss: 0.6418 - val_recall: 0.7600 - learning_rate: 6.2500e-06
+Epoch 22/40
+66/66 - 48s - 722ms/step - accuracy: 0.6429 - auc: 0.6998 - loss: 0.6274 - recall: 0.6758 - val_accuracy: 0.6399 - val_auc: 0.7027 - val_loss: 0.6422 - val_recall: 0.7657 - learning_rate: 6.2500e-06
+Epoch 23/40
+66/66 - 38s - 579ms/step - accuracy: 0.6448 - auc: 0.7031 - loss: 0.6244 - recall: 0.6822 - val_accuracy: 0.6503 - val_auc: 0.7030 - val_loss: 0.6381 - val_recall: 0.7600 - learning_rate: 6.2500e-06
+Epoch 24/40
+66/66 - 49s - 743ms/step - accuracy: 0.6282 - auc: 0.6854 - loss: 0.6340 - recall: 0.6737 - val_accuracy: 0.6477 - val_auc: 0.7057 - val_loss: 0.6405 - val_recall: 0.7771 - learning_rate: 3.1250e-06
+Epoch 25/40
+66/66 - 41s - 623ms/step - accuracy: 0.6377 - auc: 0.6987 - loss: 0.6271 - recall: 0.6906 - val_accuracy: 0.6321 - val_auc: 0.7064 - val_loss: 0.6397 - val_recall: 0.7486 - learning_rate: 3.1250e-06
+Epoch 26/40
+66/66 - 42s - 644ms/step - accuracy: 0.6481 - auc: 0.7022 - loss: 0.6280 - recall: 0.6779 - val_accuracy: 0.6425 - val_auc: 0.7076 - val_loss: 0.6378 - val_recall: 0.7543 - learning_rate: 3.1250e-06
+  concluído em 18.0 min — melhor val_auc: 0.7084
+  modelo salvo em C:\Users\pedro\Downloads\tech-challenge-fase1\feature-fase-1\models\cnn_full_scratch.keras
+
+======================================================================
+full_transfer  (entrada=full, arquitetura=transfer, 160px)
+======================================================================
+  treino 2103 imagens / 1060 pacientes
+  valid. 386 imagens / 188 pacientes
+  pesos de classe: {0: 0.91, 1: 1.11}
+  [estágio 1] backbone congelado — 2,259,265 params (1,281 treináveis)
+Epoch 1/12
+66/66 - 39s - 593ms/step - accuracy: 0.5497 - auc: 0.5687 - loss: 0.7381 - recall: 0.5449 - val_accuracy: 0.5518 - val_auc: 0.6123 - val_loss: 0.6969 - val_recall: 0.7486 - learning_rate: 0.0010
+Epoch 2/12
+66/66 - 35s - 525ms/step - accuracy: 0.5392 - auc: 0.5750 - loss: 0.7323 - recall: 0.5576 - val_accuracy: 0.5933 - val_auc: 0.6363 - val_loss: 0.6645 - val_recall: 0.3771 - learning_rate: 0.0010
+Epoch 3/12
+66/66 - 29s - 438ms/step - accuracy: 0.5716 - auc: 0.6054 - loss: 0.7050 - recall: 0.5576 - val_accuracy: 0.5984 - val_auc: 0.6341 - val_loss: 0.6674 - val_recall: 0.6343 - learning_rate: 0.0010
+Epoch 4/12
+66/66 - 29s - 438ms/step - accuracy: 0.5811 - auc: 0.6213 - loss: 0.6871 - recall: 0.5723 - val_accuracy: 0.5855 - val_auc: 0.6349 - val_loss: 0.6891 - val_recall: 0.7200 - learning_rate: 0.0010
+Epoch 5/12
+66/66 - 27s - 405ms/step - accuracy: 0.5991 - auc: 0.6510 - loss: 0.6751 - recall: 0.6008 - val_accuracy: 0.6010 - val_auc: 0.6368 - val_loss: 0.6748 - val_recall: 0.6743 - learning_rate: 0.0010
+Epoch 6/12
+66/66 - 26s - 394ms/step - accuracy: 0.6125 - auc: 0.6536 - loss: 0.6631 - recall: 0.6114 - val_accuracy: 0.6036 - val_auc: 0.6416 - val_loss: 0.6773 - val_recall: 0.7200 - learning_rate: 5.0000e-04
+Epoch 7/12
+66/66 - 27s - 409ms/step - accuracy: 0.6277 - auc: 0.6683 - loss: 0.6541 - recall: 0.6114 - val_accuracy: 0.6114 - val_auc: 0.6416 - val_loss: 0.6729 - val_recall: 0.6800 - learning_rate: 5.0000e-04
+Epoch 8/12
+66/66 - 27s - 403ms/step - accuracy: 0.6224 - auc: 0.6617 - loss: 0.6571 - recall: 0.6378 - val_accuracy: 0.5933 - val_auc: 0.6372 - val_loss: 0.6723 - val_recall: 0.6343 - learning_rate: 5.0000e-04
+Epoch 9/12
+66/66 - 26s - 398ms/step - accuracy: 0.6186 - auc: 0.6748 - loss: 0.6484 - recall: 0.6199 - val_accuracy: 0.6088 - val_auc: 0.6381 - val_loss: 0.6767 - val_recall: 0.6857 - learning_rate: 2.5000e-04
+Epoch 10/12
+66/66 - 26s - 396ms/step - accuracy: 0.6082 - auc: 0.6615 - loss: 0.6514 - recall: 0.6103 - val_accuracy: 0.6062 - val_auc: 0.6417 - val_loss: 0.6683 - val_recall: 0.6114 - learning_rate: 2.5000e-04
+Epoch 11/12
+66/66 - 27s - 408ms/step - accuracy: 0.6315 - auc: 0.6745 - loss: 0.6470 - recall: 0.6325 - val_accuracy: 0.6114 - val_auc: 0.6428 - val_loss: 0.6687 - val_recall: 0.6229 - learning_rate: 2.5000e-04
+Epoch 12/12
+66/66 - 32s - 489ms/step - accuracy: 0.6305 - auc: 0.6780 - loss: 0.6463 - recall: 0.6452 - val_accuracy: 0.6010 - val_auc: 0.6421 - val_loss: 0.6744 - val_recall: 0.6800 - learning_rate: 1.2500e-04
+  [estágio 2] fine-tune do último bloco — 1,349,761 params treináveis
+Epoch 1/8
+66/66 - 47s - 718ms/step - accuracy: 0.6158 - auc: 0.6681 - loss: 0.6492 - recall: 0.6283 - val_accuracy: 0.6114 - val_auc: 0.6409 - val_loss: 0.6653 - val_recall: 0.5257 - learning_rate: 1.0000e-05
+Epoch 2/8
+66/66 - 41s - 627ms/step - accuracy: 0.6329 - auc: 0.6825 - loss: 0.6419 - recall: 0.6357 - val_accuracy: 0.6062 - val_auc: 0.6531 - val_loss: 0.6573 - val_recall: 0.4571 - learning_rate: 1.0000e-05
+Epoch 3/8
+66/66 - 32s - 477ms/step - accuracy: 0.6348 - auc: 0.6889 - loss: 0.6367 - recall: 0.6367 - val_accuracy: 0.5855 - val_auc: 0.6487 - val_loss: 0.6758 - val_recall: 0.7200 - learning_rate: 1.0000e-05
+Epoch 4/8
+66/66 - 32s - 492ms/step - accuracy: 0.6353 - auc: 0.6873 - loss: 0.6371 - recall: 0.6494 - val_accuracy: 0.6114 - val_auc: 0.6526 - val_loss: 0.6596 - val_recall: 0.4686 - learning_rate: 1.0000e-05
+Epoch 5/8
+66/66 - 34s - 518ms/step - accuracy: 0.6481 - auc: 0.7060 - loss: 0.6235 - recall: 0.6653 - val_accuracy: 0.6321 - val_auc: 0.6610 - val_loss: 0.6522 - val_recall: 0.5543 - learning_rate: 1.0000e-05
+Epoch 6/8
+66/66 - 33s - 502ms/step - accuracy: 0.6619 - auc: 0.7248 - loss: 0.6095 - recall: 0.6674 - val_accuracy: 0.6192 - val_auc: 0.6589 - val_loss: 0.6528 - val_recall: 0.5143 - learning_rate: 1.0000e-05
+Epoch 7/8
+66/66 - 36s - 546ms/step - accuracy: 0.6686 - auc: 0.7242 - loss: 0.6110 - recall: 0.6748 - val_accuracy: 0.5699 - val_auc: 0.6513 - val_loss: 0.6821 - val_recall: 0.7371 - learning_rate: 1.0000e-05
+Epoch 8/8
+66/66 - 31s - 467ms/step - accuracy: 0.6495 - auc: 0.7166 - loss: 0.6129 - recall: 0.6515 - val_accuracy: 0.6140 - val_auc: 0.6646 - val_loss: 0.6615 - val_recall: 0.6800 - learning_rate: 1.0000e-05
+  concluído em 10.6 min — melhor val_auc: 0.6646
+  modelo salvo em C:\Users\pedro\Downloads\tech-challenge-fase1\feature-fase-1\models\cnn_full_transfer.keras
+
+======================================================================
+RESUMO DO TREINO
+======================================================================
+        modelo variant     arch  epocas  minutos  melhor_val_auc
+ patch_scratch   patch  scratch      20     18.1          0.7146
+patch_transfer   patch transfer      18      9.8          0.8037
+  full_scratch    full  scratch      26     18.0          0.7084
+ full_transfer    full transfer      20     10.6          0.6646
+
+Próximo passo: python src/cnn_evaluate.py

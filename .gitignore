@@ -1,0 +1,19 @@
+# dados
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+
+# modelos
+models/*
+!models/.gitkeep
+
+# ambiente
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# SO
+.DS_Store

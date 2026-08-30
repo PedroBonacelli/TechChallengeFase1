@@ -1,0 +1,4 @@
+model,accuracy,precision_malignant,recall_malignant,f1_malignant,roc_auc
+logistic_regression,0.9649,0.9318,0.9762,0.9535,0.9947
+decision_tree,0.9386,0.907,0.9286,0.9176,0.9289
+random_forest,0.9737,1.0,0.9286,0.963,0.9957

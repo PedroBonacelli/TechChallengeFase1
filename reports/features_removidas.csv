@@ -1,0 +1,9 @@
+feature_removida,correlacionada_com,corr_entre_features,corr_removida_vs_alvo,corr_mantida_vs_alvo
+mean radius,mean perimeter,0.9979,0.73,0.7426
+worst radius,worst perimeter,0.9937,0.7765,0.7829
+mean area,mean perimeter,0.9865,0.709,0.7426
+worst area,worst perimeter,0.9776,0.7338,0.7829
+perimeter error,radius error,0.9728,0.5561,0.5671
+mean perimeter,worst perimeter,0.9704,0.7426,0.7829
+area error,radius error,0.9518,0.5482,0.5671
+mean concavity,mean concave points,0.9214,0.6964,0.7766

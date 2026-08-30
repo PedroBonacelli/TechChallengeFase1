@@ -1,0 +1,13 @@
+modelo,features,class_weight,recall_mal,precision_mal,f1_mal,accuracy,recall_std
+logistic_regression,30 features,none,0.9605,0.9801,0.9695,0.9778,0.039
+decision_tree,30 features,none,0.8899,0.9302,0.907,0.9327,0.0722
+random_forest,30 features,none,0.9372,0.9586,0.9461,0.9608,0.0647
+logistic_regression,30 features,balanced,0.9668,0.9638,0.9647,0.9737,0.0328
+decision_tree,30 features,balanced,0.9054,0.9113,0.9059,0.9309,0.0734
+random_forest,30 features,balanced,0.9386,0.9627,0.9494,0.9631,0.0562
+logistic_regression,22 features,none,0.9463,0.9826,0.9633,0.9737,0.0503
+decision_tree,22 features,none,0.9008,0.9349,0.9154,0.9385,0.0694
+random_forest,22 features,none,0.9278,0.9651,0.9451,0.9602,0.0525
+logistic_regression,22 features,balanced,0.9636,0.9667,0.9645,0.9737,0.0382
+decision_tree,22 features,balanced,0.918,0.93,0.9216,0.9426,0.0744
+random_forest,22 features,balanced,0.923,0.9727,0.9462,0.9614,0.0562
