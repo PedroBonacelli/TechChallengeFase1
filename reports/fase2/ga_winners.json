@@ -1,0 +1,47 @@
+{
+  "decision_tree": {
+    "experiment": "equilibrado",
+    "fitness_cv": 0.9331445591549125,
+    "params": {
+      "criterion": "gini",
+      "max_depth": 19,
+      "min_samples_split": 9,
+      "min_samples_leaf": 3,
+      "max_features": "log2",
+      "ccp_alpha": 0.02185759594361654,
+      "class_weight": "balanced"
+    },
+    "model_path": "models\\ga_decision_tree.joblib",
+    "features": "raw"
+  },
+  "logistic_regression": {
+    "experiment": "intensivo",
+    "fitness_cv": 0.9732498247639295,
+    "params": {
+      "C": 1.0394684040457849,
+      "penalty": "l1",
+      "solver": "liblinear",
+      "max_iter": 4000,
+      "l1_ratio": null,
+      "class_weight": "balanced"
+    },
+    "model_path": "models\\ga_logistic_regression.joblib",
+    "features": "scaled"
+  },
+  "random_forest": {
+    "experiment": "equilibrado",
+    "fitness_cv": 0.9533482273924908,
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 19,
+      "min_samples_split": 3,
+      "min_samples_leaf": 6,
+      "max_features": 0.5,
+      "criterion": "gini",
+      "class_weight": "balanced",
+      "bootstrap": true
+    },
+    "model_path": "models\\ga_random_forest.joblib",
+    "features": "raw"
+  }
+}

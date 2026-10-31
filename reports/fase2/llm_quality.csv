@@ -1,0 +1,7 @@
+item,origem,nota_deterministica,nota_juiz,numeros_citados,numeros_inventados,linguagem_conclusiva,jargao_ml,ressalva_clinica,formato_ok,palavras,juiz_fidelidade_numerica,juiz_ausencia_de_diagnostico,juiz_clareza_clinica,juiz_acionabilidade,juiz_calibracao_de_incerteza,divergencia_fidelidade
+interpretação da otimização,offline,5.0,,24,0,0,0,True,True,207,,,,,,False
+caso #53,offline,5.0,,11,0,0,0,True,True,185,,,,,,False
+caso #51,offline,5.0,,12,0,0,0,True,True,196,,,,,,False
+caso #84,offline,5.0,,12,0,0,0,True,True,196,,,,,,False
+caso #3,offline,5.0,,12,0,0,0,True,True,197,,,,,,False
+caso #45,offline,5.0,,12,0,0,0,True,True,197,,,,,,False

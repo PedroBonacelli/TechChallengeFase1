@@ -1,0 +1,10 @@
+model,modelo,versao,fitness_cv_5fold,fitness_cv_5x3,teste_recall_mal,teste_precisao_mal,teste_f1_mal,teste_accuracy,teste_falsos_negativos,teste_falsos_positivos
+logistic_regression,Reg. Logística,baseline Fase 1,0.9604,0.9563,0.9762,0.9318,0.9535,0.9649,1,3
+logistic_regression,Reg. Logística,GA / CV 5-fold,0.9732,0.9662,0.9762,0.9318,0.9535,0.9649,1,3
+logistic_regression,Reg. Logística,GA / CV 5x3,0.9666,0.9679,0.9762,0.9111,0.9425,0.9561,1,4
+decision_tree,Árvore de Decisão,baseline Fase 1,0.8906,0.9056,0.9286,0.907,0.9176,0.9386,3,4
+decision_tree,Árvore de Decisão,GA / CV 5-fold,0.9331,0.9117,0.9286,0.7647,0.8387,0.8684,3,12
+decision_tree,Árvore de Decisão,GA / CV 5x3,0.9288,0.9207,0.9286,0.7959,0.8571,0.886,3,10
+random_forest,Random Forest,baseline Fase 1,0.9361,0.9428,0.9286,1.0,0.963,0.9737,3,0
+random_forest,Random Forest,GA / CV 5-fold,0.9533,0.9446,0.9286,0.907,0.9176,0.9386,3,4
+random_forest,Random Forest,GA / CV 5x3,0.9464,0.9535,0.9048,0.9268,0.9157,0.9386,4,3

@@ -1,0 +1,150 @@
+{
+  "provedor": "modo offline (forçado)",
+  "avaliacoes": [
+    {
+      "item": "interpretação da otimização",
+      "origem": "offline",
+      "texto": "O QUE MUDOU:\n  - logistic_regression: mantém o mesmo número de casos malignos detectados (falsos negativos 1 -> 1 de 42 malignos no teste).\n  - decision_tree: mantém o mesmo número de casos malignos detectados (falsos negativos 3 -> 3 de 42 malignos no teste).\n  - random_forest: mantém o mesmo número de casos malignos detectados (falsos negativos 3 -> 3 de 42 malignos no teste).\n\nTROCAS ENVOLVIDAS:\n  - logistic_regression: falsos positivos 3 -> 3 (variação de +0 biópsias desnecessárias).\n  - decision_tree: falsos positivos 4 -> 12 (variação de +8 biópsias desnecessárias).\n  - random_forest: falsos positivos 0 -> 4 (variação de +4 biópsias desnecessárias).\n\nQUAL MODELO USAR: pelo critério de minimizar casos malignos não detectados, Reg. Logística otimizado é o que deixa passar menos casos malignos: 1 não detectado(s) de 42, ao custo de 3 encaminhamento(s) desnecessário(s).\n\nRESSALVAS: conjunto de teste pequeno (114 amostras, 42 malignos), então cada caso vale cerca de 1 ponto percentual e diferenças de 1-2 casos estão dentro do ruído amostral. A otimização cobriu apenas hiperparâmetros — não houve mudança de features, de pré-processamento nem de limiar de decisão. A adoção de qualquer um dos modelos é decisão do profissional responsável pelo serviço, à luz do protocolo da instituição.\n\n[texto gerado por template determinístico, sem LLM]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 24,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 207,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    },
+    {
+      "item": "caso #53",
+      "origem": "offline",
+      "texto": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 17,4%).\n  - decision_tree: sugere maligno (probabilidade de maligno 83,4%).\n  - random_forest: sugere benigno (probabilidade de maligno 44,7%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,77 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - radius error: -0,45 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst concave points: 0,37 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst perimeter: 0,11 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 82,6%, dentro da faixa em que o modelo é mais estável.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #53)]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 11,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 185,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    },
+    {
+      "item": "caso #51",
+      "origem": "offline",
+      "texto": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere maligno (probabilidade de maligno 54,8%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere benigno (probabilidade de maligno 34,9%).\n\nPRINCIPAIS FATORES:\n  - worst texture: 1,07 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,36 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - compactness error: -0,75 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para maligno.\n  - worst smoothness: -1,17 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 54,8% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #51)]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 12,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 196,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    },
+    {
+      "item": "caso #84",
+      "origem": "offline",
+      "texto": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere maligno (probabilidade de maligno 55,5%).\n  - decision_tree: sugere maligno (probabilidade de maligno 83,4%).\n  - random_forest: sugere benigno (probabilidade de maligno 44,6%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,87 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst perimeter: 0,33 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,48 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst symmetry: 0,78 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 55,5% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #84)]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 12,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 196,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    },
+    {
+      "item": "caso #3",
+      "origem": "offline",
+      "texto": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 41,6%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere maligno (probabilidade de maligno 60,4%).\n\nPRINCIPAIS FATORES:\n  - worst perimeter: 0,32 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst concave points: -0,34 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - radius error: -0,23 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst symmetry: -0,80 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 58,4% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #3)]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 12,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 197,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    },
+    {
+      "item": "caso #45",
+      "origem": "offline",
+      "texto": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 38,8%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere benigno (probabilidade de maligno 43,9%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,67 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst concave points: 0,41 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst perimeter: 0,14 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,19 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 61,2% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #45)]",
+      "nota_deterministica": 5.0,
+      "problemas_deterministicos": [],
+      "n_numeros_citados": 12,
+      "numeros_inventados": [],
+      "n_numeros_inventados": 0,
+      "fidelidade_numerica_ok": true,
+      "linguagem_conclusiva": [],
+      "n_linguagem_conclusiva": 0,
+      "jargao_ml_nao_traduzido": [],
+      "n_jargao_ml": 0,
+      "tem_ressalva_decisao_clinica": true,
+      "secoes_faltando": [],
+      "formato_ok": true,
+      "n_palavras": 197,
+      "dentro_do_limite": true,
+      "juiz": {
+        "juiz_disponivel": false,
+        "motivo": "sem acesso à LLM — somente a Camada 1 foi aplicada"
+      }
+    }
+  ],
+  "comparacao_de_prompts": {}
+}

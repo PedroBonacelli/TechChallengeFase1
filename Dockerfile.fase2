@@ -1,0 +1,47 @@
+# Imagem da Fase 2 — serve os DOIS consumidores da arquitetura:
+#
+#   - o job de otimização no AWS Batch (`python -m src.ga.run_experiments`)
+#   - a Lambda de inferência (`src.lambda_handler.handler`)
+#
+# Uma imagem, dois pontos de entrada, porque treino e inferência TÊM que
+# usar a mesma versão de scikit-learn. Um modelo serializado por joblib
+# numa versão e desserializado em outra é um bug silencioso clássico: às
+# vezes levanta warning, às vezes muda o comportamento sem avisar nada.
+# Compartilhar a imagem elimina a classe inteira de problema.
+#
+# Base na imagem da AWS pro Python: ela já traz o Runtime Interface
+# Client (o processo que faz a ponte entre o runtime da Lambda e o
+# código), e serve de container comum fora da Lambda também.
+#
+#   docker build -f Dockerfile.fase2 -t tc-fase2 .
+#   docker run --rm tc-fase2 python -m src.ga.run_experiments --quick
+#   docker run --rm -p 9000:8080 tc-fase2            # emula a Lambda local
+
+FROM public.ecr.aws/lambda/python:3.11
+
+# Dependências primeiro, código depois: muda código sem invalidar a
+# camada de pip, que é a lenta.
+COPY requirements-fase2.txt requirements-lock.txt ./
+
+# As da Fase 1 que a Fase 2 precisa (sem tensorflow, sem jupyter — a CNN
+# da Fase 1 não participa da otimização por GA, e são ~600 MB de imagem
+# que não seriam usados).
+RUN pip install --no-cache-dir -r requirements-lock.txt \
+    && pip install --no-cache-dir -r requirements-fase2.txt \
+    && find /var/lang/lib/python3.11/site-packages -name "tests" -type d -prune -exec rm -rf {} + \
+    && find /var/lang/lib/python3.11/site-packages -name "*.pyc" -delete
+
+# ${LAMBDA_TASK_ROOT} é /var/task — o diretório que o runtime da Lambda
+# coloca no sys.path
+COPY src/ ${LAMBDA_TASK_ROOT}/src/
+COPY pytest.ini ${LAMBDA_TASK_ROOT}/
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=${LAMBDA_TASK_ROOT} \
+    MPLBACKEND=Agg \
+    FASE2_CACHE_DIR=/tmp/modelos
+
+# Padrão é a Lambda; o Batch sobrescreve com `command` na job definition
+# (ver infra/batch.tf).
+CMD ["src.lambda_handler.handler"]

@@ -1,0 +1,10 @@
+model,metrica_de_teste,spearman_vs_fitness_cv,n_pontos,metrica_constante_no_teste
+logistic_regression,teste_f1_mal,,4,True
+logistic_regression,teste_accuracy,,4,True
+logistic_regression,teste_recall_mal,,4,True
+decision_tree,teste_f1_mal,-1.0,4,False
+decision_tree,teste_accuracy,-1.0,4,False
+decision_tree,teste_recall_mal,0.0,4,False
+random_forest,teste_f1_mal,-0.632,4,False
+random_forest,teste_accuracy,-0.833,4,False
+random_forest,teste_recall_mal,0.5,4,False

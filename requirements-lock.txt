@@ -1,0 +1,34 @@
+# Versoes FIXADAS das dependencias de ML, para a imagem de container.
+#
+# Por que fixar aqui e nao em requirements.txt:
+#
+# O requirements.txt da Fase 1 e sem pin, de proposito -- qualquer um
+# clona o repo e instala o que o indice tem. Serve pra desenvolvimento.
+#
+# A imagem que vai pro Batch e pra Lambda nao pode funcionar assim. O
+# modelo e serializado por joblib no treino e desserializado na
+# inferencia; se as duas pontas usarem versoes diferentes de
+# scikit-learn, o resultado vai de warning a mudanca silenciosa de
+# comportamento. Como a mesma imagem serve os dois lados (ver
+# Dockerfile.fase2), fixar aqui garante que treino e inferencia veem
+# exatamente a mesma biblioteca.
+#
+# Estas sao as versoes efetivamente usadas na execucao que gerou os
+# resultados em reports/fase2/.
+#
+# Nao inclui tensorflow nem jupyter: a CNN da Fase 1 nao participa da
+# otimizacao por GA, e sao ~600 MB de imagem que nunca seriam usados.
+
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.4.2
+scipy==1.12.0
+joblib==1.3.2
+
+# matplotlib so e usado pela Etapa 4 (geracao dos graficos), que roda no
+# job do Batch junto com a otimizacao. A Lambda nao importa isso.
+matplotlib==3.7.0
+
+# SDK da AWS: na Lambda o boto3 ja vem no runtime, mas o job do Batch
+# roda em container proprio e precisa dele explicitamente pro S3.
+boto3==1.34.104

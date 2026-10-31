@@ -5,6 +5,12 @@ de suporte ao diagnóstico e detecção de riscos pra saúde da mulher, usando
 Machine Learning sobre dados médicos estruturados e, na etapa extra, Visão
 Computacional (CNN) sobre imagens de mamografia.
 
+> **Fase 2 neste mesmo repositório** (branch `tehc-challenge-fase-2`):
+> otimização dos hiperparâmetros destes três modelos por algoritmo
+> genético, mais uma camada de LLM que traduz os resultados em
+> linguagem natural. Ver **[README_FASE2.md](README_FASE2.md)** e
+> [`reports/fase2/RELATORIO_TECNICO_FASE2.md`](reports/fase2/RELATORIO_TECNICO_FASE2.md).
+
 ## O desafio
 
 Uma rede de hospitais quer identificar mais cedo condições que afetam a

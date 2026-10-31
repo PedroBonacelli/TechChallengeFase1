@@ -1,0 +1,506 @@
+[
+  {
+    "model": "decision_tree",
+    "experiment": "equilibrado",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "equilibrado",
+      "population_size": 30,
+      "n_generations": 20,
+      "crossover_rate": 0.9,
+      "mutation_rate": 0.1,
+      "mutation_sigma": 0.15,
+      "selection": "tournament",
+      "tournament_size": 3,
+      "crossover_op": "uniform",
+      "blx_alpha": 0.5,
+      "elitism": 2,
+      "patience": null,
+      "seed": 42,
+      "description": "Referência. Parâmetros de meio de tabela, os que a literatura usa como ponto de partida: cruzamento alto, mutação baixa, torneio de 3. Serve de régua pros outros dois."
+    },
+    "best_fitness_cv": 0.9331445591549125,
+    "best_params": {
+      "criterion": "gini",
+      "max_depth": 19,
+      "min_samples_split": 9,
+      "min_samples_leaf": 3,
+      "max_features": "log2",
+      "ccp_alpha": 0.02185759594361654,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.933145,
+      "recall_malignant": 0.952941,
+      "f1_malignant": 0.895629,
+      "precision_malignant": 0.846394,
+      "accuracy": 0.916484,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 295,
+      "cache_hits": 305,
+      "falhas": 0
+    },
+    "generations_run": 20,
+    "stopped_early": false,
+    "elapsed_s": 12.927495900075883,
+    "chromosome": [
+      0.1894713590842857,
+      0.9368131505337792,
+      0.24097057500568475,
+      0.12275793241148603,
+      0.8435749515977528,
+      0.43715191887233074,
+      0.17629136502213016
+    ]
+  },
+  {
+    "model": "decision_tree",
+    "experiment": "exploratorio",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "exploratorio",
+      "population_size": 50,
+      "n_generations": 12,
+      "crossover_rate": 0.7,
+      "mutation_rate": 0.3,
+      "mutation_sigma": 0.25,
+      "selection": "roulette",
+      "tournament_size": 3,
+      "crossover_op": "blx",
+      "blx_alpha": 0.5,
+      "elitism": 1,
+      "patience": null,
+      "seed": 43,
+      "description": "Exploração máxima: população grande, mutação 3x maior, roleta (pressão seletiva fraca) e BLX-alpha, que inventa valores intermediários. Elitismo mínimo. Aposta em cobrir o espaço; o risco é não ter gerações suficientes pra refinar."
+    },
+    "best_fitness_cv": 0.9249638258731051,
+    "best_params": {
+      "criterion": "entropy",
+      "max_depth": 13,
+      "min_samples_split": 17,
+      "min_samples_leaf": 10,
+      "max_features": null,
+      "ccp_alpha": 0.022039376016619944,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.924964,
+      "recall_malignant": 0.929412,
+      "f1_malignant": 0.910146,
+      "precision_malignant": 0.893334,
+      "accuracy": 0.931868,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 571,
+      "cache_hits": 29,
+      "falhas": 0
+    },
+    "generations_run": 12,
+    "stopped_early": false,
+    "elapsed_s": 24.08203200006392,
+    "chromosome": [
+      0.48484928606071576,
+      0.6278355955176379,
+      0.5490832884128998,
+      0.4563110885743302,
+      0.2026759803062721,
+      0.4407875203323989,
+      0.40651346865335847
+    ]
+  },
+  {
+    "model": "decision_tree",
+    "experiment": "intensivo",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "intensivo",
+      "population_size": 15,
+      "n_generations": 40,
+      "crossover_rate": 0.95,
+      "mutation_rate": 0.05,
+      "mutation_sigma": 0.08,
+      "selection": "tournament",
+      "tournament_size": 5,
+      "crossover_op": "blx",
+      "blx_alpha": 0.3,
+      "elitism": 4,
+      "patience": null,
+      "seed": 44,
+      "description": "Intensificação: população pequena com o dobro de gerações, torneio de 5 (pressão alta), mutação baixa e elitismo forte. Converge rápido; o risco é travar num ótimo local."
+    },
+    "best_fitness_cv": 0.9268647515211527,
+    "best_params": {
+      "criterion": "entropy",
+      "max_depth": 4,
+      "min_samples_split": 14,
+      "min_samples_leaf": 5,
+      "max_features": null,
+      "ccp_alpha": 0.0037072037077666336,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.926865,
+      "recall_malignant": 0.941176,
+      "f1_malignant": 0.897427,
+      "precision_malignant": 0.863729,
+      "accuracy": 0.918681,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 338,
+      "cache_hits": 262,
+      "falhas": 0
+    },
+    "generations_run": 40,
+    "stopped_early": false,
+    "elapsed_s": 19.610206700046547,
+    "chromosome": [
+      0.3801106762781315,
+      0.10369005809395718,
+      0.44180477834359005,
+      0.19788038167229693,
+      0.1748580855040045,
+      0.07414407415533267,
+      0.1607230374789344
+    ]
+  },
+  {
+    "model": "logistic_regression",
+    "experiment": "equilibrado",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "equilibrado",
+      "population_size": 30,
+      "n_generations": 20,
+      "crossover_rate": 0.9,
+      "mutation_rate": 0.1,
+      "mutation_sigma": 0.15,
+      "selection": "tournament",
+      "tournament_size": 3,
+      "crossover_op": "uniform",
+      "blx_alpha": 0.5,
+      "elitism": 2,
+      "patience": null,
+      "seed": 42,
+      "description": "Referência. Parâmetros de meio de tabela, os que a literatura usa como ponto de partida: cruzamento alto, mutação baixa, torneio de 3. Serve de régua pros outros dois."
+    },
+    "best_fitness_cv": 0.971742448934303,
+    "best_params": {
+      "C": 0.8327024540463326,
+      "penalty": "elasticnet",
+      "solver": "saga",
+      "max_iter": 2200,
+      "l1_ratio": 0.5261890262011084,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.971742,
+      "recall_malignant": 0.970588,
+      "f1_malignant": 0.970745,
+      "precision_malignant": 0.971737,
+      "accuracy": 0.978022,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 211,
+      "cache_hits": 389,
+      "falhas": 0
+    },
+    "generations_run": 20,
+    "stopped_early": false,
+    "elapsed_s": 39.9995744000189,
+    "chromosome": [
+      0.5840979689127356,
+      0.9454165724399485,
+      0.08444432113988909,
+      0.41580740217060963,
+      0.5261890262011084,
+      0.49399081924451893
+    ]
+  },
+  {
+    "model": "logistic_regression",
+    "experiment": "exploratorio",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "exploratorio",
+      "population_size": 50,
+      "n_generations": 12,
+      "crossover_rate": 0.7,
+      "mutation_rate": 0.3,
+      "mutation_sigma": 0.25,
+      "selection": "roulette",
+      "tournament_size": 3,
+      "crossover_op": "blx",
+      "blx_alpha": 0.5,
+      "elitism": 1,
+      "patience": null,
+      "seed": 43,
+      "description": "Exploração máxima: população grande, mutação 3x maior, roleta (pressão seletiva fraca) e BLX-alpha, que inventa valores intermediários. Elitismo mínimo. Aposta em cobrir o espaço; o risco é não ter gerações suficientes pra refinar."
+    },
+    "best_fitness_cv": 0.9707094537964485,
+    "best_params": {
+      "C": 1.061210585503579,
+      "penalty": "elasticnet",
+      "solver": "saga",
+      "max_iter": 3800,
+      "l1_ratio": 0.6270204330960562,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.970709,
+      "recall_malignant": 0.970588,
+      "f1_malignant": 0.967932,
+      "precision_malignant": 0.96619,
+      "accuracy": 0.975824,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 542,
+      "cache_hits": 58,
+      "falhas": 0
+    },
+    "generations_run": 12,
+    "stopped_early": false,
+    "elapsed_s": 201.1872814000817,
+    "chromosome": [
+      0.6051603146779769,
+      0.8995727104800397,
+      0.43711132022755306,
+      0.7422120015242387,
+      0.6270204330960562,
+      0.003716288246367591
+    ]
+  },
+  {
+    "model": "logistic_regression",
+    "experiment": "intensivo",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "intensivo",
+      "population_size": 15,
+      "n_generations": 40,
+      "crossover_rate": 0.95,
+      "mutation_rate": 0.05,
+      "mutation_sigma": 0.08,
+      "selection": "tournament",
+      "tournament_size": 5,
+      "crossover_op": "blx",
+      "blx_alpha": 0.3,
+      "elitism": 4,
+      "patience": null,
+      "seed": 44,
+      "description": "Intensificação: população pequena com o dobro de gerações, torneio de 5 (pressão alta), mutação baixa e elitismo forte. Converge rápido; o risco é travar num ótimo local."
+    },
+    "best_fitness_cv": 0.9732498247639295,
+    "best_params": {
+      "C": 1.0394684040457849,
+      "penalty": "l1",
+      "solver": "liblinear",
+      "max_iter": 4000,
+      "l1_ratio": null,
+      "class_weight": "balanced"
+    },
+    "best_metrics_cv": {
+      "fitness": 0.97325,
+      "recall_malignant": 0.976471,
+      "f1_malignant": 0.965294,
+      "precision_malignant": 0.954911,
+      "accuracy": 0.973626,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 119,
+      "cache_hits": 481,
+      "falhas": 0
+    },
+    "generations_run": 40,
+    "stopped_early": false,
+    "elapsed_s": 19.075556499999948,
+    "chromosome": [
+      0.6033622585878291,
+      0.20182007853005354,
+      0.14949449162544456,
+      0.7813221315308351,
+      0.9986277448451336,
+      0.2272320678002803
+    ]
+  },
+  {
+    "model": "random_forest",
+    "experiment": "equilibrado",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "equilibrado",
+      "population_size": 30,
+      "n_generations": 20,
+      "crossover_rate": 0.9,
+      "mutation_rate": 0.1,
+      "mutation_sigma": 0.15,
+      "selection": "tournament",
+      "tournament_size": 3,
+      "crossover_op": "uniform",
+      "blx_alpha": 0.5,
+      "elitism": 2,
+      "patience": null,
+      "seed": 42,
+      "description": "Referência. Parâmetros de meio de tabela, os que a literatura usa como ponto de partida: cruzamento alto, mutação baixa, torneio de 3. Serve de régua pros outros dois."
+    },
+    "best_fitness_cv": 0.9533482273924908,
+    "best_params": {
+      "n_estimators": 150,
+      "max_depth": 19,
+      "min_samples_split": 3,
+      "min_samples_leaf": 6,
+      "max_features": 0.5,
+      "criterion": "gini",
+      "class_weight": "balanced",
+      "bootstrap": true
+    },
+    "best_metrics_cv": {
+      "fitness": 0.953348,
+      "recall_malignant": 0.958824,
+      "f1_malignant": 0.939909,
+      "precision_malignant": 0.922939,
+      "accuracy": 0.953846,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 269,
+      "cache_hits": 331,
+      "falhas": 0
+    },
+    "generations_run": 20,
+    "stopped_early": false,
+    "elapsed_s": 304.23599289997946,
+    "chromosome": [
+      0.286446226882055,
+      0.9248084293120271,
+      0.024859491386256316,
+      0.5551980423268247,
+      0.6339751116810851,
+      0.1058974037507533,
+      0.14033959706391264,
+      0.41911431931630383
+    ]
+  },
+  {
+    "model": "random_forest",
+    "experiment": "exploratorio",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "exploratorio",
+      "population_size": 50,
+      "n_generations": 12,
+      "crossover_rate": 0.7,
+      "mutation_rate": 0.3,
+      "mutation_sigma": 0.25,
+      "selection": "roulette",
+      "tournament_size": 3,
+      "crossover_op": "blx",
+      "blx_alpha": 0.5,
+      "elitism": 1,
+      "patience": null,
+      "seed": 43,
+      "description": "Exploração máxima: população grande, mutação 3x maior, roleta (pressão seletiva fraca) e BLX-alpha, que inventa valores intermediários. Elitismo mínimo. Aposta em cobrir o espaço; o risco é não ter gerações suficientes pra refinar."
+    },
+    "best_fitness_cv": 0.9533482273924908,
+    "best_params": {
+      "n_estimators": 110,
+      "max_depth": 20,
+      "min_samples_split": 24,
+      "min_samples_leaf": 4,
+      "max_features": 0.5,
+      "criterion": "gini",
+      "class_weight": "balanced_subsample",
+      "bootstrap": true
+    },
+    "best_metrics_cv": {
+      "fitness": 0.953348,
+      "recall_malignant": 0.958824,
+      "f1_malignant": 0.939909,
+      "precision_malignant": 0.922939,
+      "accuracy": 0.953846,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 564,
+      "cache_hits": 36,
+      "falhas": 0
+    },
+    "generations_run": 12,
+    "stopped_early": false,
+    "elapsed_s": 801.9642883000197,
+    "chromosome": [
+      0.17969510427907723,
+      1.0,
+      0.7731807593127638,
+      0.388648726691047,
+      0.7478757849682742,
+      0.0781181733640749,
+      0.33512400445137963,
+      0.33867586262305216
+    ]
+  },
+  {
+    "model": "random_forest",
+    "experiment": "intensivo",
+    "run_id": "20261031T052223",
+    "config": {
+      "name": "intensivo",
+      "population_size": 15,
+      "n_generations": 40,
+      "crossover_rate": 0.95,
+      "mutation_rate": 0.05,
+      "mutation_sigma": 0.08,
+      "selection": "tournament",
+      "tournament_size": 5,
+      "crossover_op": "blx",
+      "blx_alpha": 0.3,
+      "elitism": 4,
+      "patience": null,
+      "seed": 44,
+      "description": "Intensificação: população pequena com o dobro de gerações, torneio de 5 (pressão alta), mutação baixa e elitismo forte. Converge rápido; o risco é travar num ótimo local."
+    },
+    "best_fitness_cv": 0.9490699273894153,
+    "best_params": {
+      "n_estimators": 320,
+      "max_depth": 10,
+      "min_samples_split": 10,
+      "min_samples_leaf": 3,
+      "max_features": 0.7,
+      "criterion": "entropy",
+      "class_weight": "balanced_subsample",
+      "bootstrap": true
+    },
+    "best_metrics_cv": {
+      "fitness": 0.94907,
+      "recall_malignant": 0.947059,
+      "f1_malignant": 0.947075,
+      "precision_malignant": 0.949336,
+      "accuracy": 0.96044,
+      "failed": false
+    },
+    "evaluator_stats": {
+      "avaliacoes_reais": 95,
+      "cache_hits": 505,
+      "falhas": 0
+    },
+    "generations_run": 40,
+    "stopped_early": false,
+    "elapsed_s": 233.17831320001278,
+    "chromosome": [
+      0.772160590952181,
+      0.45361938131670043,
+      0.28787960061680795,
+      0.21162282004655075,
+      0.9836215855176161,
+      0.6463069137077347,
+      0.5230638924619143,
+      0.11419550854996519
+    ]
+  }
+]

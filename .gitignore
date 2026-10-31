@@ -17,3 +17,17 @@ __pycache__/
 
 # SO
 .DS_Store
+
+# segredos (Fase 2)
+.env
+
+# logs (Fase 2)
+logs/*
+!logs/.gitkeep
+
+# arquivos temporarios do Word (criados ao abrir o .docx)
+~$*
+.~lock.*
+
+# cache do pytest
+.pytest_cache/

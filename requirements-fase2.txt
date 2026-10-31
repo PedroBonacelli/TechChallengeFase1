@@ -1,0 +1,11 @@
+# Fase 2 — dependências adicionais (as da Fase 1 estão em requirements.txt)
+#
+# O GA é implementado à mão (src/ga/), sem biblioteca de algoritmos
+# genéticos: o enunciado pede a implementação dos operadores, e escrever
+# seleção/cruzamento/mutação na mão deixa cada um testável isoladamente.
+anthropic>=0.40.0      # SDK oficial da LLM (Etapa 6)
+python-dotenv>=1.0.0   # carrega ANTHROPIC_API_KEY de .env
+pytest>=8.0.0          # testes automatizados (Etapa 8)
+tabulate>=0.9.0     # tabelas markdown nos relatorios (pandas.to_markdown)
+python-docx>=1.1.0    # so para gerar reports/fase2/entrega_final_fase2.docx
+                       # (build_entrega_docx.py); nao e dependencia do pipeline

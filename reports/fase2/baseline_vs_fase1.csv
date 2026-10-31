@@ -1,0 +1,10 @@
+model,metrica,fase1_publicado,refeito_nesta_versao,diferenca
+logistic_regression,accuracy,0.9649,0.9649,0.0
+logistic_regression,recall_malignant,0.9762,0.9762,0.0
+logistic_regression,f1_malignant,0.9535,0.9535,0.0
+decision_tree,accuracy,0.9386,0.9386,0.0
+decision_tree,recall_malignant,0.9286,0.9286,0.0
+decision_tree,f1_malignant,0.9176,0.9176,0.0
+random_forest,accuracy,0.9737,0.9737,0.0
+random_forest,recall_malignant,0.9286,0.9286,0.0
+random_forest,f1_malignant,0.963,0.963,0.0

@@ -1,0 +1,997 @@
+{
+  "provedor": "modo offline (forçado)",
+  "otimizacao": {
+    "payload": {
+      "n_teste": 114,
+      "n_malignos_teste": 42,
+      "funcao_objetivo_do_ga": "0.60 * recall do maligno + 0.25 * F1 do maligno + 0.15 * acurácia, medida por validação cruzada estratificada de 5 folds SOBRE O TREINO (o conjunto de teste não foi usado na otimização)",
+      "orcamento_por_experimento": "600 avaliações de fitness",
+      "experimentos": [
+        {
+          "nome": "equilibrado",
+          "modelo": "decision_tree",
+          "populacao": 30,
+          "geracoes": 20,
+          "taxa_cruzamento": 0.9,
+          "taxa_mutacao": 0.1,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9331
+        },
+        {
+          "nome": "exploratorio",
+          "modelo": "decision_tree",
+          "populacao": 50,
+          "geracoes": 12,
+          "taxa_cruzamento": 0.7,
+          "taxa_mutacao": 0.3,
+          "selecao": "roulette",
+          "fitness_cv_obtido": 0.925
+        },
+        {
+          "nome": "intensivo",
+          "modelo": "decision_tree",
+          "populacao": 15,
+          "geracoes": 40,
+          "taxa_cruzamento": 0.95,
+          "taxa_mutacao": 0.05,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9269
+        },
+        {
+          "nome": "equilibrado",
+          "modelo": "logistic_regression",
+          "populacao": 30,
+          "geracoes": 20,
+          "taxa_cruzamento": 0.9,
+          "taxa_mutacao": 0.1,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9717
+        },
+        {
+          "nome": "exploratorio",
+          "modelo": "logistic_regression",
+          "populacao": 50,
+          "geracoes": 12,
+          "taxa_cruzamento": 0.7,
+          "taxa_mutacao": 0.3,
+          "selecao": "roulette",
+          "fitness_cv_obtido": 0.9707
+        },
+        {
+          "nome": "intensivo",
+          "modelo": "logistic_regression",
+          "populacao": 15,
+          "geracoes": 40,
+          "taxa_cruzamento": 0.95,
+          "taxa_mutacao": 0.05,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9732
+        },
+        {
+          "nome": "equilibrado",
+          "modelo": "random_forest",
+          "populacao": 30,
+          "geracoes": 20,
+          "taxa_cruzamento": 0.9,
+          "taxa_mutacao": 0.1,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9533
+        },
+        {
+          "nome": "exploratorio",
+          "modelo": "random_forest",
+          "populacao": 50,
+          "geracoes": 12,
+          "taxa_cruzamento": 0.7,
+          "taxa_mutacao": 0.3,
+          "selecao": "roulette",
+          "fitness_cv_obtido": 0.9533
+        },
+        {
+          "nome": "intensivo",
+          "modelo": "random_forest",
+          "populacao": 15,
+          "geracoes": 40,
+          "taxa_cruzamento": 0.95,
+          "taxa_mutacao": 0.05,
+          "selecao": "tournament",
+          "fitness_cv_obtido": 0.9491
+        }
+      ],
+      "comparativo": [
+        {
+          "model": "logistic_regression",
+          "modelo": "Reg. Logística",
+          "experimento_vencedor": "intensivo",
+          "recall_mal_original": 0.9762,
+          "recall_mal_otimizado": 0.9762,
+          "precisao_mal_original": 0.9318,
+          "precisao_mal_otimizado": 0.9318,
+          "acuracia_original": 0.9649,
+          "acuracia_otimizado": 0.9649,
+          "f1_mal_original": 0.9535,
+          "f1_mal_otimizado": 0.9535,
+          "roc_auc_original": 0.9947,
+          "roc_auc_otimizado": 0.997,
+          "fn_original": 1,
+          "fn_otimizado": 1,
+          "delta_falsos_negativos": 0,
+          "fp_original": 3,
+          "fp_otimizado": 3,
+          "delta_falsos_positivos": 0,
+          "fitness_cv_original": 0.9604,
+          "fitness_cv_otimizado": 0.9732,
+          "hiperparametros_fase1": {
+            "C": 1.0,
+            "penalty": "l2",
+            "solver": "lbfgs",
+            "max_iter": 5000,
+            "l1_ratio": null,
+            "class_weight": "balanced"
+          },
+          "hiperparametros_otimizados": {
+            "C": 1.0394684040457849,
+            "penalty": "l1",
+            "solver": "liblinear",
+            "max_iter": 4000,
+            "l1_ratio": null,
+            "class_weight": "balanced"
+          }
+        },
+        {
+          "model": "decision_tree",
+          "modelo": "Árvore de Decisão",
+          "experimento_vencedor": "equilibrado",
+          "recall_mal_original": 0.9286,
+          "recall_mal_otimizado": 0.9286,
+          "precisao_mal_original": 0.907,
+          "precisao_mal_otimizado": 0.7647,
+          "acuracia_original": 0.9386,
+          "acuracia_otimizado": 0.8684,
+          "f1_mal_original": 0.9176,
+          "f1_mal_otimizado": 0.8387,
+          "roc_auc_original": 0.9289,
+          "roc_auc_otimizado": 0.8889,
+          "fn_original": 3,
+          "fn_otimizado": 3,
+          "delta_falsos_negativos": 0,
+          "fp_original": 4,
+          "fp_otimizado": 12,
+          "delta_falsos_positivos": 8,
+          "fitness_cv_original": 0.8906,
+          "fitness_cv_otimizado": 0.9331,
+          "hiperparametros_fase1": {
+            "criterion": "gini",
+            "max_depth": 5,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": null,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced"
+          },
+          "hiperparametros_otimizados": {
+            "criterion": "gini",
+            "max_depth": 19,
+            "min_samples_split": 9,
+            "min_samples_leaf": 3,
+            "max_features": "log2",
+            "ccp_alpha": 0.02185759594361654,
+            "class_weight": "balanced"
+          }
+        },
+        {
+          "model": "random_forest",
+          "modelo": "Random Forest",
+          "experimento_vencedor": "equilibrado",
+          "recall_mal_original": 0.9286,
+          "recall_mal_otimizado": 0.9286,
+          "precisao_mal_original": 1.0,
+          "precisao_mal_otimizado": 0.907,
+          "acuracia_original": 0.9737,
+          "acuracia_otimizado": 0.9386,
+          "f1_mal_original": 0.963,
+          "f1_mal_otimizado": 0.9176,
+          "roc_auc_original": 0.9957,
+          "roc_auc_otimizado": 0.9934,
+          "fn_original": 3,
+          "fn_otimizado": 3,
+          "delta_falsos_negativos": 0,
+          "fp_original": 0,
+          "fp_otimizado": 4,
+          "delta_falsos_positivos": 4,
+          "fitness_cv_original": 0.9361,
+          "fitness_cv_otimizado": 0.9533,
+          "hiperparametros_fase1": {
+            "n_estimators": 300,
+            "max_depth": 8,
+            "min_samples_split": 2,
+            "min_samples_leaf": 1,
+            "max_features": "sqrt",
+            "criterion": "gini",
+            "class_weight": "balanced",
+            "bootstrap": true
+          },
+          "hiperparametros_otimizados": {
+            "n_estimators": 150,
+            "max_depth": 19,
+            "min_samples_split": 3,
+            "min_samples_leaf": 6,
+            "max_features": 0.5,
+            "criterion": "gini",
+            "class_weight": "balanced",
+            "bootstrap": true
+          }
+        }
+      ],
+      "recomendacao_por_recall": "Reg. Logística otimizado tem o maior recall do maligno (0.9762), deixando de detectar 1 de 42 casos malignos"
+    },
+    "explicacao": "O QUE MUDOU:\n  - logistic_regression: mantém o mesmo número de casos malignos detectados (falsos negativos 1 -> 1 de 42 malignos no teste).\n  - decision_tree: mantém o mesmo número de casos malignos detectados (falsos negativos 3 -> 3 de 42 malignos no teste).\n  - random_forest: mantém o mesmo número de casos malignos detectados (falsos negativos 3 -> 3 de 42 malignos no teste).\n\nTROCAS ENVOLVIDAS:\n  - logistic_regression: falsos positivos 3 -> 3 (variação de +0 biópsias desnecessárias).\n  - decision_tree: falsos positivos 4 -> 12 (variação de +8 biópsias desnecessárias).\n  - random_forest: falsos positivos 0 -> 4 (variação de +4 biópsias desnecessárias).\n\nQUAL MODELO USAR: pelo critério de minimizar casos malignos não detectados, Reg. Logística otimizado é o que deixa passar menos casos malignos: 1 não detectado(s) de 42, ao custo de 3 encaminhamento(s) desnecessário(s).\n\nRESSALVAS: conjunto de teste pequeno (114 amostras, 42 malignos), então cada caso vale cerca de 1 ponto percentual e diferenças de 1-2 casos estão dentro do ruído amostral. A otimização cobriu apenas hiperparâmetros — não houve mudança de features, de pré-processamento nem de limiar de decisão. A adoção de qualquer um dos modelos é decisão do profissional responsável pelo serviço, à luz do protocolo da instituição.\n\n[texto gerado por template determinístico, sem LLM]",
+    "telemetria": {
+      "model": "template-offline",
+      "provider": "offline",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "latency_s": 0.0,
+      "custo_estimado_usd": 0.0,
+      "stop_reason": null,
+      "error": null
+    }
+  },
+  "casos": [
+    {
+      "payload": {
+        "caso": {
+          "id": 53,
+          "indice_no_teste": 53,
+          "rotulo_real": "maligno",
+          "motivo_de_selecao": "falso negativo do modelo logistic_regression — maligno classificado como benigno"
+        },
+        "modelo_principal": "logistic_regression",
+        "previsoes": {
+          "logistic_regression": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.1738,
+            "confianca": 0.8262,
+            "acuracia_teste_do_modelo": 0.9649122807017544,
+            "recall_maligno_teste_do_modelo": 0.9761904761904762,
+            "precisao_maligno_teste_do_modelo": 0.9318181818181818
+          },
+          "decision_tree": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.8341,
+            "confianca": 0.8341,
+            "acuracia_teste_do_modelo": 0.868421052631579,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.7647058823529411
+          },
+          "random_forest": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.4466,
+            "confianca": 0.5534,
+            "acuracia_teste_do_modelo": 0.9385964912280702,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.9069767441860465
+          }
+        },
+        "consenso": {
+          "divergem": true,
+          "votos_maligno": 1,
+          "votos_benigno": 2
+        },
+        "fatores_principais": [
+          {
+            "feature": "worst texture",
+            "valor_medido": 20.86,
+            "z_score": -0.77,
+            "media_referencia_treino": 25.6473,
+            "contribuicao_log_odds": -1.3606,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "radius error",
+            "valor_medido": 0.2787,
+            "z_score": -0.45,
+            "media_referencia_treino": 0.399,
+            "contribuicao_log_odds": -1.1693,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst concave points",
+            "valor_medido": 0.1383,
+            "z_score": 0.366,
+            "media_referencia_treino": 0.1139,
+            "contribuicao_log_odds": 0.6323,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst perimeter",
+            "valor_medido": 110.3,
+            "z_score": 0.111,
+            "media_referencia_treino": 106.6253,
+            "contribuicao_log_odds": 0.4173,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst symmetry",
+            "valor_medido": 0.2589,
+            "z_score": -0.495,
+            "media_referencia_treino": 0.2909,
+            "contribuicao_log_odds": -0.3237,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "texture error",
+            "valor_medido": 0.6205,
+            "z_score": -1.048,
+            "media_referencia_treino": 1.2187,
+            "contribuicao_log_odds": 0.2675,
+            "direcao": "maligno"
+          }
+        ],
+        "metodo_dos_fatores": "SHAP exato do modelo linear (coef_i * (x_i - media_treino_i)), calculado sobre a Regressão Logística otimizada. z_score é o desvio em relação à média do conjunto de treino.",
+        "features_mais_importantes_na_floresta": [
+          {
+            "feature": "worst perimeter",
+            "importancia_global": 0.391,
+            "valor_medido": 110.3,
+            "z_score": 0.111
+          },
+          {
+            "feature": "mean concave points",
+            "importancia_global": 0.2326,
+            "valor_medido": 0.0507,
+            "z_score": 0.06
+          },
+          {
+            "feature": "worst concave points",
+            "importancia_global": 0.221,
+            "valor_medido": 0.1383,
+            "z_score": 0.366
+          },
+          {
+            "feature": "worst concavity",
+            "importancia_global": 0.0349,
+            "valor_medido": 0.2779,
+            "z_score": 0.006
+          },
+          {
+            "feature": "worst texture",
+            "importancia_global": 0.0254,
+            "valor_medido": 20.86,
+            "z_score": -0.77
+          }
+        ],
+        "contexto": {
+          "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+          "n_features": 22,
+          "n_teste": 114,
+          "n_malignos_teste": 42,
+          "prevalencia_maligno_treino": 0.3736,
+          "limiar_confianca_para_revisao_humana": 0.65,
+          "natureza_das_features": "medidas morfométricas de núcleos celulares obtidas por punção aspirativa por agulha fina, em lâmina — não são sintomas nem achados de imagem"
+        }
+      },
+      "explicacao": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 17,4%).\n  - decision_tree: sugere maligno (probabilidade de maligno 83,4%).\n  - random_forest: sugere benigno (probabilidade de maligno 44,7%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,77 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - radius error: -0,45 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst concave points: 0,37 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst perimeter: 0,11 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 82,6%, dentro da faixa em que o modelo é mais estável.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #53)]",
+      "telemetria": {
+        "model": "template-offline",
+        "provider": "offline",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_s": 0.0,
+        "custo_estimado_usd": 0.0,
+        "stop_reason": null,
+        "error": null
+      }
+    },
+    {
+      "payload": {
+        "caso": {
+          "id": 51,
+          "indice_no_teste": 51,
+          "rotulo_real": "benigno",
+          "motivo_de_selecao": "os 3 modelos divergem neste caso"
+        },
+        "modelo_principal": "logistic_regression",
+        "previsoes": {
+          "logistic_regression": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.548,
+            "confianca": 0.548,
+            "acuracia_teste_do_modelo": 0.9649122807017544,
+            "recall_maligno_teste_do_modelo": 0.9761904761904762,
+            "precisao_maligno_teste_do_modelo": 0.9318181818181818
+          },
+          "decision_tree": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.9324,
+            "confianca": 0.9324,
+            "acuracia_teste_do_modelo": 0.868421052631579,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.7647058823529411
+          },
+          "random_forest": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.3491,
+            "confianca": 0.6509,
+            "acuracia_teste_do_modelo": 0.9385964912280702,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.9069767441860465
+          }
+        },
+        "consenso": {
+          "divergem": true,
+          "votos_maligno": 2,
+          "votos_benigno": 1
+        },
+        "fatores_principais": [
+          {
+            "feature": "worst texture",
+            "valor_medido": 32.29,
+            "z_score": 1.068,
+            "media_referencia_treino": 25.6473,
+            "contribuicao_log_odds": 1.8879,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "radius error",
+            "valor_medido": 0.3031,
+            "z_score": -0.358,
+            "media_referencia_treino": 0.399,
+            "contribuicao_log_odds": -0.9321,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "compactness error",
+            "valor_medido": 0.0117,
+            "z_score": -0.749,
+            "media_referencia_treino": 0.0255,
+            "contribuicao_log_odds": 0.6061,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst smoothness",
+            "valor_medido": 0.106,
+            "z_score": -1.169,
+            "media_referencia_treino": 0.1323,
+            "contribuicao_log_odds": -0.4437,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "mean concave points",
+            "valor_medido": 0.0303,
+            "z_score": -0.465,
+            "media_referencia_treino": 0.0483,
+            "contribuicao_log_odds": -0.437,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst concavity",
+            "valor_medido": 0.1611,
+            "z_score": -0.535,
+            "media_referencia_treino": 0.2766,
+            "contribuicao_log_odds": -0.4062,
+            "direcao": "benigno"
+          }
+        ],
+        "metodo_dos_fatores": "SHAP exato do modelo linear (coef_i * (x_i - media_treino_i)), calculado sobre a Regressão Logística otimizada. z_score é o desvio em relação à média do conjunto de treino.",
+        "features_mais_importantes_na_floresta": [
+          {
+            "feature": "worst perimeter",
+            "importancia_global": 0.391,
+            "valor_medido": 107.4,
+            "z_score": 0.023
+          },
+          {
+            "feature": "mean concave points",
+            "importancia_global": 0.2326,
+            "valor_medido": 0.0303,
+            "z_score": -0.465
+          },
+          {
+            "feature": "worst concave points",
+            "importancia_global": 0.221,
+            "valor_medido": 0.1095,
+            "z_score": -0.066
+          },
+          {
+            "feature": "worst concavity",
+            "importancia_global": 0.0349,
+            "valor_medido": 0.1611,
+            "z_score": -0.535
+          },
+          {
+            "feature": "worst texture",
+            "importancia_global": 0.0254,
+            "valor_medido": 32.29,
+            "z_score": 1.068
+          }
+        ],
+        "contexto": {
+          "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+          "n_features": 22,
+          "n_teste": 114,
+          "n_malignos_teste": 42,
+          "prevalencia_maligno_treino": 0.3736,
+          "limiar_confianca_para_revisao_humana": 0.65,
+          "natureza_das_features": "medidas morfométricas de núcleos celulares obtidas por punção aspirativa por agulha fina, em lâmina — não são sintomas nem achados de imagem"
+        }
+      },
+      "explicacao": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere maligno (probabilidade de maligno 54,8%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere benigno (probabilidade de maligno 34,9%).\n\nPRINCIPAIS FATORES:\n  - worst texture: 1,07 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,36 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - compactness error: -0,75 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para maligno.\n  - worst smoothness: -1,17 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 54,8% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #51)]",
+      "telemetria": {
+        "model": "template-offline",
+        "provider": "offline",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_s": 0.0,
+        "custo_estimado_usd": 0.0,
+        "stop_reason": null,
+        "error": null
+      }
+    },
+    {
+      "payload": {
+        "caso": {
+          "id": 84,
+          "indice_no_teste": 84,
+          "rotulo_real": "maligno",
+          "motivo_de_selecao": "os 3 modelos divergem neste caso"
+        },
+        "modelo_principal": "logistic_regression",
+        "previsoes": {
+          "logistic_regression": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.5554,
+            "confianca": 0.5554,
+            "acuracia_teste_do_modelo": 0.9649122807017544,
+            "recall_maligno_teste_do_modelo": 0.9761904761904762,
+            "precisao_maligno_teste_do_modelo": 0.9318181818181818
+          },
+          "decision_tree": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.8341,
+            "confianca": 0.8341,
+            "acuracia_teste_do_modelo": 0.868421052631579,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.7647058823529411
+          },
+          "random_forest": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.4458,
+            "confianca": 0.5542,
+            "acuracia_teste_do_modelo": 0.9385964912280702,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.9069767441860465
+          }
+        },
+        "consenso": {
+          "divergem": true,
+          "votos_maligno": 2,
+          "votos_benigno": 1
+        },
+        "fatores_principais": [
+          {
+            "feature": "worst texture",
+            "valor_medido": 20.24,
+            "z_score": -0.87,
+            "media_referencia_treino": 25.6473,
+            "contribuicao_log_odds": -1.5368,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst perimeter",
+            "valor_medido": 117.7,
+            "z_score": 0.334,
+            "media_referencia_treino": 106.6253,
+            "contribuicao_log_odds": 1.2578,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "radius error",
+            "valor_medido": 0.2711,
+            "z_score": -0.478,
+            "media_referencia_treino": 0.399,
+            "contribuicao_log_odds": -1.2432,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst symmetry",
+            "valor_medido": 0.3415,
+            "z_score": 0.784,
+            "media_referencia_treino": 0.2909,
+            "contribuicao_log_odds": 0.5128,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "texture error",
+            "valor_medido": 0.3621,
+            "z_score": -1.501,
+            "media_referencia_treino": 1.2187,
+            "contribuicao_log_odds": 0.383,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst concave points",
+            "valor_medido": 0.1252,
+            "z_score": 0.169,
+            "media_referencia_treino": 0.1139,
+            "contribuicao_log_odds": 0.2928,
+            "direcao": "maligno"
+          }
+        ],
+        "metodo_dos_fatores": "SHAP exato do modelo linear (coef_i * (x_i - media_treino_i)), calculado sobre a Regressão Logística otimizada. z_score é o desvio em relação à média do conjunto de treino.",
+        "features_mais_importantes_na_floresta": [
+          {
+            "feature": "worst perimeter",
+            "importancia_global": 0.391,
+            "valor_medido": 117.7,
+            "z_score": 0.334
+          },
+          {
+            "feature": "mean concave points",
+            "importancia_global": 0.2326,
+            "valor_medido": 0.0408,
+            "z_score": -0.194
+          },
+          {
+            "feature": "worst concave points",
+            "importancia_global": 0.221,
+            "valor_medido": 0.1252,
+            "z_score": 0.169
+          },
+          {
+            "feature": "worst concavity",
+            "importancia_global": 0.0349,
+            "valor_medido": 0.3327,
+            "z_score": 0.26
+          },
+          {
+            "feature": "worst texture",
+            "importancia_global": 0.0254,
+            "valor_medido": 20.24,
+            "z_score": -0.87
+          }
+        ],
+        "contexto": {
+          "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+          "n_features": 22,
+          "n_teste": 114,
+          "n_malignos_teste": 42,
+          "prevalencia_maligno_treino": 0.3736,
+          "limiar_confianca_para_revisao_humana": 0.65,
+          "natureza_das_features": "medidas morfométricas de núcleos celulares obtidas por punção aspirativa por agulha fina, em lâmina — não são sintomas nem achados de imagem"
+        }
+      },
+      "explicacao": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere maligno (probabilidade de maligno 55,5%).\n  - decision_tree: sugere maligno (probabilidade de maligno 83,4%).\n  - random_forest: sugere benigno (probabilidade de maligno 44,6%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,87 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst perimeter: 0,33 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,48 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst symmetry: 0,78 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 55,5% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #84)]",
+      "telemetria": {
+        "model": "template-offline",
+        "provider": "offline",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_s": 0.0,
+        "custo_estimado_usd": 0.0,
+        "stop_reason": null,
+        "error": null
+      }
+    },
+    {
+      "payload": {
+        "caso": {
+          "id": 3,
+          "indice_no_teste": 3,
+          "rotulo_real": "benigno",
+          "motivo_de_selecao": "os 3 modelos divergem neste caso"
+        },
+        "modelo_principal": "logistic_regression",
+        "previsoes": {
+          "logistic_regression": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.4157,
+            "confianca": 0.5843,
+            "acuracia_teste_do_modelo": 0.9649122807017544,
+            "recall_maligno_teste_do_modelo": 0.9761904761904762,
+            "precisao_maligno_teste_do_modelo": 0.9318181818181818
+          },
+          "decision_tree": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.9324,
+            "confianca": 0.9324,
+            "acuracia_teste_do_modelo": 0.868421052631579,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.7647058823529411
+          },
+          "random_forest": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.6038,
+            "confianca": 0.6038,
+            "acuracia_teste_do_modelo": 0.9385964912280702,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.9069767441860465
+          }
+        },
+        "consenso": {
+          "divergem": true,
+          "votos_maligno": 2,
+          "votos_benigno": 1
+        },
+        "fatores_principais": [
+          {
+            "feature": "worst perimeter",
+            "valor_medido": 117.2,
+            "z_score": 0.319,
+            "media_referencia_treino": 106.6253,
+            "contribuicao_log_odds": 1.201,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst concave points",
+            "valor_medido": 0.0912,
+            "z_score": -0.34,
+            "media_referencia_treino": 0.1139,
+            "contribuicao_log_odds": -0.5877,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "radius error",
+            "valor_medido": 0.3389,
+            "z_score": -0.225,
+            "media_referencia_treino": 0.399,
+            "contribuicao_log_odds": -0.584,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst symmetry",
+            "valor_medido": 0.2394,
+            "z_score": -0.797,
+            "media_referencia_treino": 0.2909,
+            "contribuicao_log_odds": -0.5212,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst concavity",
+            "valor_medido": 0.1663,
+            "z_score": -0.511,
+            "media_referencia_treino": 0.2766,
+            "contribuicao_log_odds": -0.3879,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "compactness error",
+            "valor_medido": 0.0181,
+            "z_score": -0.406,
+            "media_referencia_treino": 0.0255,
+            "contribuicao_log_odds": 0.3285,
+            "direcao": "maligno"
+          }
+        ],
+        "metodo_dos_fatores": "SHAP exato do modelo linear (coef_i * (x_i - media_treino_i)), calculado sobre a Regressão Logística otimizada. z_score é o desvio em relação à média do conjunto de treino.",
+        "features_mais_importantes_na_floresta": [
+          {
+            "feature": "worst perimeter",
+            "importancia_global": 0.391,
+            "valor_medido": 117.2,
+            "z_score": 0.319
+          },
+          {
+            "feature": "mean concave points",
+            "importancia_global": 0.2326,
+            "valor_medido": 0.0483,
+            "z_score": 0.0
+          },
+          {
+            "feature": "worst concave points",
+            "importancia_global": 0.221,
+            "valor_medido": 0.0912,
+            "z_score": -0.34
+          },
+          {
+            "feature": "worst concavity",
+            "importancia_global": 0.0349,
+            "valor_medido": 0.1663,
+            "z_score": -0.511
+          },
+          {
+            "feature": "worst texture",
+            "importancia_global": 0.0254,
+            "valor_medido": 25.45,
+            "z_score": -0.032
+          }
+        ],
+        "contexto": {
+          "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+          "n_features": 22,
+          "n_teste": 114,
+          "n_malignos_teste": 42,
+          "prevalencia_maligno_treino": 0.3736,
+          "limiar_confianca_para_revisao_humana": 0.65,
+          "natureza_das_features": "medidas morfométricas de núcleos celulares obtidas por punção aspirativa por agulha fina, em lâmina — não são sintomas nem achados de imagem"
+        }
+      },
+      "explicacao": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 41,6%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere maligno (probabilidade de maligno 60,4%).\n\nPRINCIPAIS FATORES:\n  - worst perimeter: 0,32 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst concave points: -0,34 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - radius error: -0,23 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst symmetry: -0,80 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 58,4% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #3)]",
+      "telemetria": {
+        "model": "template-offline",
+        "provider": "offline",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_s": 0.0,
+        "custo_estimado_usd": 0.0,
+        "stop_reason": null,
+        "error": null
+      }
+    },
+    {
+      "payload": {
+        "caso": {
+          "id": 45,
+          "indice_no_teste": 45,
+          "rotulo_real": "benigno",
+          "motivo_de_selecao": "os 3 modelos divergem neste caso"
+        },
+        "modelo_principal": "logistic_regression",
+        "previsoes": {
+          "logistic_regression": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.3876,
+            "confianca": 0.6124,
+            "acuracia_teste_do_modelo": 0.9649122807017544,
+            "recall_maligno_teste_do_modelo": 0.9761904761904762,
+            "precisao_maligno_teste_do_modelo": 0.9318181818181818
+          },
+          "decision_tree": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "maligno",
+            "rotulo_previsto": 0,
+            "proba_maligno": 0.9324,
+            "confianca": 0.9324,
+            "acuracia_teste_do_modelo": 0.868421052631579,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.7647058823529411
+          },
+          "random_forest": {
+            "versao": "otimizado_ga",
+            "classe_prevista": "benigno",
+            "rotulo_previsto": 1,
+            "proba_maligno": 0.4388,
+            "confianca": 0.5612,
+            "acuracia_teste_do_modelo": 0.9385964912280702,
+            "recall_maligno_teste_do_modelo": 0.9285714285714286,
+            "precisao_maligno_teste_do_modelo": 0.9069767441860465
+          }
+        },
+        "consenso": {
+          "divergem": true,
+          "votos_maligno": 1,
+          "votos_benigno": 2
+        },
+        "fatores_principais": [
+          {
+            "feature": "worst texture",
+            "valor_medido": 21.51,
+            "z_score": -0.665,
+            "media_referencia_treino": 25.6473,
+            "contribuicao_log_odds": -1.1759,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst concave points",
+            "valor_medido": 0.1414,
+            "z_score": 0.412,
+            "media_referencia_treino": 0.1139,
+            "contribuicao_log_odds": 0.7127,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "worst perimeter",
+            "valor_medido": 111.4,
+            "z_score": 0.144,
+            "media_referencia_treino": 106.6253,
+            "contribuicao_log_odds": 0.5423,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "radius error",
+            "valor_medido": 0.3491,
+            "z_score": -0.186,
+            "media_referencia_treino": 0.399,
+            "contribuicao_log_odds": -0.4848,
+            "direcao": "benigno"
+          },
+          {
+            "feature": "worst concavity",
+            "valor_medido": 0.3755,
+            "z_score": 0.459,
+            "media_referencia_treino": 0.2766,
+            "contribuicao_log_odds": 0.3479,
+            "direcao": "maligno"
+          },
+          {
+            "feature": "smoothness error",
+            "valor_medido": 0.0046,
+            "z_score": -0.8,
+            "media_referencia_treino": 0.0071,
+            "contribuicao_log_odds": -0.2398,
+            "direcao": "benigno"
+          }
+        ],
+        "metodo_dos_fatores": "SHAP exato do modelo linear (coef_i * (x_i - media_treino_i)), calculado sobre a Regressão Logística otimizada. z_score é o desvio em relação à média do conjunto de treino.",
+        "features_mais_importantes_na_floresta": [
+          {
+            "feature": "worst perimeter",
+            "importancia_global": 0.391,
+            "valor_medido": 111.4,
+            "z_score": 0.144
+          },
+          {
+            "feature": "mean concave points",
+            "importancia_global": 0.2326,
+            "valor_medido": 0.0422,
+            "z_score": -0.157
+          },
+          {
+            "feature": "worst concave points",
+            "importancia_global": 0.221,
+            "valor_medido": 0.1414,
+            "z_score": 0.412
+          },
+          {
+            "feature": "worst concavity",
+            "importancia_global": 0.0349,
+            "valor_medido": 0.3755,
+            "z_score": 0.459
+          },
+          {
+            "feature": "worst texture",
+            "importancia_global": 0.0254,
+            "valor_medido": 21.51,
+            "z_score": -0.665
+          }
+        ],
+        "contexto": {
+          "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+          "n_features": 22,
+          "n_teste": 114,
+          "n_malignos_teste": 42,
+          "prevalencia_maligno_treino": 0.3736,
+          "limiar_confianca_para_revisao_humana": 0.65,
+          "natureza_das_features": "medidas morfométricas de núcleos celulares obtidas por punção aspirativa por agulha fina, em lâmina — não são sintomas nem achados de imagem"
+        }
+      },
+      "explicacao": "AVALIAÇÃO DOS MODELOS: atenção — os modelos divergem neste caso.\n  - logistic_regression: sugere benigno (probabilidade de maligno 38,8%).\n  - decision_tree: sugere maligno (probabilidade de maligno 93,2%).\n  - random_forest: sugere benigno (probabilidade de maligno 43,9%).\n\nPRINCIPAIS FATORES:\n  - worst texture: -0,67 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n  - worst concave points: 0,41 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - worst perimeter: 0,14 desvios-padrão acima da média do grupo de referência; empurra a sugestão para maligno.\n  - radius error: -0,19 desvios-padrão abaixo da média do grupo de referência; empurra a sugestão para benigno.\n\nGRAU DE CONFIANÇA: o modelo de referência (logistic_regression) acerta 96,5% dos casos do conjunto de teste e identifica 97,6% dos casos malignos. Neste caso específico a confiança é de 61,2% — abaixo do limiar de 65% adotado, o que coloca o caso na faixa em que o modelo erra com mais frequência.\n\nCONDUTA SUGERIDA: caso de baixa concordância ou baixa confiança — recomenda-se revisão humana da lâmina e investigação complementar antes de qualquer conclusão. A decisão sobre a conduta é do profissional responsável.\n\n[texto gerado por template determinístico, sem LLM (caso #45)]",
+      "telemetria": {
+        "model": "template-offline",
+        "provider": "offline",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_s": 0.0,
+        "custo_estimado_usd": 0.0,
+        "stop_reason": null,
+        "error": null
+      }
+    }
+  ]
+}
