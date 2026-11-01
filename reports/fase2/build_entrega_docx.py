@@ -248,12 +248,6 @@ def capa(doc: Document) -> None:
 
     p(
         doc,
-        ("[data da entrega — a definir]", {"red": True, "bold": True}),
-        align=WD_ALIGN_PARAGRAPH.CENTER,
-    )
-
-    p(
-        doc,
         (
             "Tudo em vermelho neste documento é pendência — o que ainda "
             "falta entregar e o que ficou conscientemente fora de "
@@ -306,10 +300,11 @@ def secao_1_entregaveis(doc: Document) -> None:
       ("pendente — os slides da Fase 2 ainda não foram montados.",
        {"red": True}))
 
-    p(doc, ("Publicação do código: ", {"bold": True}),
-      ("pendente — os 17 arquivos novos/modificados da Fase 2 ainda não "
-       "foram commitados nem enviados ao GitHub. Até que isso aconteça, "
-       "o link acima mostra apenas a Fase 1.", {"red": True}))
+    p(doc, ("Código publicado: ", {"bold": True}),
+      "os 75 arquivos da Fase 2 (14.623 linhas) estão no GitHub, na "
+      "branch indicada acima — código do algoritmo genético, camada de "
+      "LLM, monitoramento, 201 testes, infraestrutura como código e "
+      "todos os resultados.")
 
     quebra(doc)
 
@@ -1278,7 +1273,7 @@ def secao_11_pendencias(doc: Document) -> None:
 
     p(doc,
       ("Esta seção consolida tudo que ainda não está entregue. Itens "
-       "1 a 5 são tarefas pendentes; 6 e 7 são escopo conscientemente "
+       "1 a 3 são tarefas pendentes; 4 e 5 são escopo conscientemente "
        "deixado de fora, listados aqui para que não passem "
        "despercebidos.", {"italic": True, "gray": True}))
 
@@ -1287,28 +1282,19 @@ def secao_11_pendencias(doc: Document) -> None:
     tabela(doc,
            ["#", "Pendência", "Estado atual / o que falta"],
            [[("1", {"red": True, "bold": True}),
-             ("Data da entrega", {"red": True, "bold": True}),
-             ("O cabeçalho do documento está com um marcador. Definir e "
-              "preencher.", {"red": True})],
-            [("2", {"red": True, "bold": True}),
              ("Vídeo de demonstração (até 15 min)", {"red": True, "bold": True}),
              ("Roteiro completo pronto em reports/fase2/roteiro_video.md "
               "(10 blocos com marcação de tempo, checklist de gravação e "
               "perguntas prováveis da banca). Falta gravar, publicar no "
               "YouTube/Vimeo e colar o link na seção 1.", {"red": True})],
-            [("3", {"red": True, "bold": True}),
+            [("2", {"red": True, "bold": True}),
              ("Etapas 6 e 7 com a LLM real", {"red": True, "bold": True}),
              ("Rodaram em modo offline por falta de ANTHROPIC_API_KEY. "
               "Falta: configurar a chave em .env, rodar "
               "'python -m src.llm.explain', rodar "
               "'python -m src.llm.evaluate_quality --comparar-prompts' "
               "e substituir os relatórios gerados.", {"red": True})],
-            [("4", {"red": True, "bold": True}),
-             ("Commit e push", {"red": True, "bold": True}),
-             ("17 arquivos novos/modificados na branch "
-              "tehc-challenge-fase-2, nada commitado. O repositório "
-              "público ainda mostra apenas a Fase 1.", {"red": True})],
-            [("5", {"red": True, "bold": True}),
+            [("3", {"red": True, "bold": True}),
              ("Apresentação (slides)", {"red": True, "bold": True}),
              ("A Fase 1 teve um deck com link no documento de entrega. "
               "Não existe equivalente para a Fase 2.", {"red": True})]],
@@ -1318,7 +1304,7 @@ def secao_11_pendencias(doc: Document) -> None:
 
     tabela(doc,
            ["#", "Item", "Justificativa e consequência"],
-           [[("6", {"red": True, "bold": True}),
+           [[("4", {"red": True, "bold": True}),
              ("Nuvem não provisionada", {"red": True, "bold": True}),
              ("O Terraform (1.339 linhas), o Dockerfile e o handler "
               "Lambda estão escritos e documentados, mas não foram "
@@ -1326,7 +1312,7 @@ def secao_11_pendencias(doc: Document) -> None:
               "aplicar exigiria credenciais AWS e geraria custo "
               "recorrente. A entrega é o código de infraestrutura.",
               {"red": True})],
-            [("7", {"red": True, "bold": True}),
+            [("5", {"red": True, "bold": True}),
              ("terraform validate não executado", {"red": True, "bold": True}),
              ("O binário do Terraform não está no ambiente de "
               "desenvolvimento. Consequência: erro de sintaxe ou de "
@@ -1335,21 +1321,19 @@ def secao_11_pendencias(doc: Document) -> None:
               "rodar validate e revisar o plan antes.", {"red": True})]],
            larguras=[1.0, 4.6, 9.4])
 
-    h2(doc, "Como completar as pendências 3 e 4")
+    h2(doc, "Como completar a pendência 2")
 
     p(doc,
-      ("# 3 — explicações com a LLM real\n"
-       "cp .env.example .env            # preencher ANTHROPIC_API_KEY\n"
+      ("cp .env.example .env            # preencher ANTHROPIC_API_KEY\n"
        "python -m src.llm.explain\n"
-       "python -m src.llm.evaluate_quality --comparar-prompts\n\n"
-       "# 4 — publicar o código\n"
-       "git add -A && git commit -m \"feat: fase 2 — GA + LLM\"\n"
-       "git push -u origin tehc-challenge-fase-2",
+       "python -m src.llm.evaluate_quality --comparar-prompts",
        {"code": True}))
 
     p(doc,
-      "Nenhuma das duas exige alteração no sistema — o caminho de "
-      "código já está pronto e testado nos dois modos.")
+      "Não exige nenhuma alteração no sistema — o caminho de código é o "
+      "mesmo nos dois modos, só muda o provedor. Rodar esses três "
+      "comandos substitui os relatórios gerados em modo offline pelos "
+      "da LLM real.")
 
 
 # -----------------------------------------------------------------------
